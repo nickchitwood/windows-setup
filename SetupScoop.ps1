@@ -10,6 +10,7 @@ $all_apps = $setting -ne "Y"
 # Add basic apps for scoop (Prerequisite for extras)
 scoop install 7zip
 scoop install git
+scoop install hub
 scoop install sudo
 
 # Add extras bucket
