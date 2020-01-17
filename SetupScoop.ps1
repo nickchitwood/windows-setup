@@ -28,6 +28,7 @@ scoop install dark # To support WiX Toolset
 ## Install languages
 scoop install R
 scoop install python
+scoop install ruby #Support jekyll and GitHub pages
 
 # Java Bucket
 if ($all_apps) {
