@@ -16,19 +16,24 @@ scoop install sudo
 # Add extras bucket
 scoop bucket add extras
 scoop bucket add nerd-fonts
+scoop bucket add versions
 if ($all_apps) {
     scoop bucket add java
 }
 
 # Main bucket
 ## Install other basic system tools and command line
-scoop install windows-terminal vim which
+scoop install vim which
 scoop install dark # To support WiX Toolset
 
 ## Install languages
 scoop install R
 scoop install python
-scoop install ruby #Support jekyll and GitHub pages
+
+### Ruby
+scoop install ruby26
+scoop install msys2
+ridk install
 
 # Java Bucket
 if ($all_apps) {
@@ -37,10 +42,11 @@ if ($all_apps) {
 
 # NerdFonts bucket
 ## Install fonts
-scoop install firacode
+sudo scoop install firacode
 
 # Extras Bucket
 ## Applications
+scoop install windows-terminal
 scoop install googlechrome
 if ($all_apps){
     scoop install pdfsam sumatrapdf
