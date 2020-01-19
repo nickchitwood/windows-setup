@@ -12,6 +12,7 @@ scoop install 7zip
 scoop install git
 scoop install hub
 scoop install sudo
+scoop install neofetch
 
 # Add extras bucket
 scoop bucket add extras
