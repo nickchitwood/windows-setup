@@ -30,6 +30,7 @@ scoop install dark # To support WiX Toolset
 ## Install languages
 scoop install R
 scoop install python
+scoop install nodejs
 
 ### Ruby
 scoop install ruby26
