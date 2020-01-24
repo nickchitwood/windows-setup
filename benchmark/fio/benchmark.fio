@@ -1,0 +1,59 @@
+# Do some important numbers on SSD drives, to gauge what kind of
+# performance you might get out of them.
+#
+# Sequential read and write speeds are tested, these are expected to be
+# high. Random reads should also be fast, random writes are where crap
+# drives are usually separated from the good drives.
+#
+# This uses a queue depth of 4. New SATA SSD's will support up to 32
+# in flight commands, so it may also be interesting to increase the queue
+# depth and compare. Note that most real-life usage will not see that
+# large of a queue depth, so 4 is more representative of normal use.
+#
+[global]
+direct=1
+size=10g
+runtime=60
+filename=fio_test.file
+
+[seq-read-1m-QD8]
+iodepth=8
+thread=1
+bs=1024k
+rw=read
+stonewall
+
+[seq-read-1m-QD1]
+iodepth=1
+thread=1
+bs=1024k
+rw=read
+stonewall
+
+[rand-read-4k-QD1]
+iodepth=1
+thread=1
+bs=4k
+rw=randread
+stonewall
+
+[seq-write-1m-QD8]
+iodepth=8
+thread=1
+bs=1024k
+rw=write
+stonewall
+
+[seq-write-1m-QD1]
+iodepth=1
+thread=1
+bs=1024k
+rw=write
+stonewall
+
+[rand-write-4k-QD1]
+iodepth=1
+thread=1
+bs=4k
+rw=randwrite
+stonewall
