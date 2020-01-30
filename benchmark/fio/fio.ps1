@@ -20,7 +20,7 @@ if (-not (Test-Path -LiteralPath $env:COMPUTERNAME))
 # Run Benchmark
 fio .\benchmark.fio --directory=$escaped_folder --output-format=json --eta=always --output=$host_filename
 
-# 
+# Process results
 $results_json = Get-Content $host_filename | ConvertFrom-Json
 $cell = @()
 foreach($job in $results_json.jobs)
